@@ -1,22 +1,3 @@
-// let btnClick = document.querySelector("#btnClick");
-// let score = document.querySelector("#score");
-// let btnReset = document.querySelector("#btnReset");
-// let counter;
-
-// counter = localStorage.getItem("counter");
-
-// btnClick.onclick = () => {
-//   counter++;
-//   score.innerHTML = `Количество очков: ${counter}`;
-//   localStorage.setItem("counter", counter);
-//   console.log(score.innerHTML);
-// };
-
-// btnReset.onclick = () => {
-//   score.innerHTML = "Количество очков: 0";
-//   localStorage.setItem("counter", 0);
-// };
-
 // Задаём начальные значения счёта и уровня
 let score = 0;
 let level = 1;
@@ -95,16 +76,16 @@ function changeSkin(s) {
   // Проверяем значение счёта и устанавливаем соответствующий скин
   if (s > 100 && s <= 500) {
     skin = "skin2";
-    capybara.setAttribute("src", `assets/images/${skin}.png`);
+    capybara.setAttribute("src", `../assets/images/${skin}.png`);
   } else if (s > 500 && s <= 1000) {
     skin = "skin3";
-    capybara.setAttribute("src", `assets/images/${skin}.png`);
+    capybara.setAttribute("src", `../assets/images/${skin}.png`);
   } else if (s > 1000 && s <= 5000) {
     skin = "skin4";
-    capybara.setAttribute("src", `assets/images/${skin}.png`);
+    capybara.setAttribute("src", `../assets/images/${skin}.png`);
   } else if (s > 5000 && s <= 10000) {
     skin = "skin5";
-    capybara.setAttribute("src", `assets/images/${skin}.png`);
+    capybara.setAttribute("src", `../assets/images/${skin}.png`);
   }
 }
 

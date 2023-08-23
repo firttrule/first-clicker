@@ -32,7 +32,7 @@ function changeSkin(s) {
   } else if (s > 5000 && s <= 10000) {
     skin = "skin5";
   }
-  capybara.setAttribute("src", `assets/images/${skin}.png`);
+  capybara.setAttribute("src", `../assets/images/${skin}.png`);
 }
 
 function reset() {
@@ -50,3 +50,22 @@ function updateScore() {
 function updateUserLevel() {
   userLevel.innerHTML = `Ваш уровень: ${level}`;
 }
+
+// let btnClick = document.querySelector("#btnClick");
+// let score = document.querySelector("#score");
+// let btnReset = document.querySelector("#btnReset");
+// let counter;
+
+// counter = localStorage.getItem("counter");
+
+// btnClick.onclick = () => {
+//   counter++;
+//   score.innerHTML = `Количество очков: ${counter}`;
+//   localStorage.setItem("counter", counter);
+//   console.log(score.innerHTML);
+// };
+
+// btnReset.onclick = () => {
+//   score.innerHTML = "Количество очков: 0";
+//   localStorage.setItem("counter", 0);
+// };
