@@ -5,10 +5,26 @@ let score = 0;
 let level = 1;
 let skin = "skin1";
 
+if (localStorage.getItem("score")) {
+  score = JSON.parse(localStorage.getItem("score"));
+  userScore.innerHTML = score + "$";
+}
+
+if (localStorage.getItem("level")) {
+  level = JSON.parse(localStorage.getItem("level"));
+  userLevel.innerHTML = "Ваш уровень: " + level;
+}
+
+if (localStorage.getItem("skin")) {
+  skin = localStorage.getItem("skin");
+  capybara.setAttribute("src", "../assets/images/" + skin + ".png");
+}
+
 function clickHandler() {
   score += level;
   updateScore();
   changeSkin(score);
+  localStorage.setItem("score", score);
 }
 
 function up(num) {
@@ -19,6 +35,8 @@ function up(num) {
     userScore.innerHTML = score + "$";
     level += num;
     updateUserLevel();
+    localStorage.setItem("score", score);
+    localStorage.setItem("level", level);
   }
 }
 
@@ -32,7 +50,9 @@ function changeSkin(s) {
   } else if (s > 5000 && s <= 10000) {
     skin = "skin5";
   }
+
   capybara.setAttribute("src", `../assets/images/${skin}.png`);
+  localStorage.setItem("skin", skin);
 }
 
 function reset() {
@@ -41,6 +61,10 @@ function reset() {
   level = 1;
   updateUserLevel();
   skin = "skin1";
+
+  localStorage.removeItem("score");
+  localStorage.removeItem("level");
+  localStorage.removeItem("skin");
 }
 
 function updateScore() {
@@ -50,22 +74,3 @@ function updateScore() {
 function updateUserLevel() {
   userLevel.innerHTML = `Ваш уровень: ${level}`;
 }
-
-// let btnClick = document.querySelector("#btnClick");
-// let score = document.querySelector("#score");
-// let btnReset = document.querySelector("#btnReset");
-// let counter;
-
-// counter = localStorage.getItem("counter");
-
-// btnClick.onclick = () => {
-//   counter++;
-//   score.innerHTML = `Количество очков: ${counter}`;
-//   localStorage.setItem("counter", counter);
-//   console.log(score.innerHTML);
-// };
-
-// btnReset.onclick = () => {
-//   score.innerHTML = "Количество очков: 0";
-//   localStorage.setItem("counter", 0);
-// };
