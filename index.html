@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="box">
+      <h3>Супер кликер</h3>
+      <h1 id="score">0$</h1>
+      <h3 id="level">Ваш уровень: 1</h3>
+      <img
+        id="capybara"
+        src="assets/images/skin1.png"
+        alt="capybara"
+        onclick="clickHandler()"
+      />
+      <!-- <button id="btnClick" onclick="clickHandler()">Кликнуть</button> -->
+
+      <h5>Улучшение силы клика:</h5>
+      <!-- <div>
+            <button onclick="up1()">+1</button>
+            <button onclick="up2()">+2</button>
+            <button onclick="up3()">+3</button>
+            <button onclick="up4()">+5</button>
+            <button onclick="up5()">+10</button>
+        </div> -->
+      <div>
+        <button onclick="up(1)">+1 за 100$</button>
+        <button onclick="up(2)">+2 за 400$</button>
+        <button onclick="up(3)">+3 за 900$</button>
+        <button onclick="up(5)">+5 за 2500$</button>
+        <button onclick="up(10)">+10 за 10000$</button>
+        <button onclick="up(30)">+30 за 90000$</button>
+        <button onclick="up(50)">+50 за 250000$</button>
+        <button onclick="up(100)">+100 за 1000000$</button>
+        <button onclick="up(150)">+150 за 2250000$</button>
+        <button onclick="up(300)">+300 за 9000000$</button>
+        <button onclick="up(500)">+500 за 25000000$</button>
+      </div>
+
+      <button id="btnReset" onclick="reset()">Начать заново</button>
+    </div>
+  </body>
+</html>
