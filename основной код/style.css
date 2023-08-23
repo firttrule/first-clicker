@@ -16,12 +16,12 @@ h1 {
 
 h3 {
   font-size: 48px;
-  margin-bottom: 16px;
+  margin: 1% 0;
 }
 
 h4 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
 }
 
 img {
@@ -64,7 +64,7 @@ button {
   font-size: 24px;
   cursor: pointer;
   margin-bottom: 4px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 button:hover {

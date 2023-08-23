@@ -3,6 +3,7 @@ let userLevel = document.querySelector("#level");
 let capybara = document.querySelector("#capybara");
 let score = 0;
 let level = 1;
+let autoScore = 0;
 let skin = "skin1";
 
 if (localStorage.getItem("score")) {
