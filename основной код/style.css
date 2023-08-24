@@ -27,7 +27,8 @@ h4 {
 img {
   margin: auto auto;
   display: block;
-  transition: 0.2s;
+  transition: 0.1s;
+  /* width: 40%; */
 }
 
 img:active {
@@ -42,7 +43,7 @@ img:active {
 .menu {
   width: 40%;
   background-image: url("../assets/images/background1.png");
-  padding-top: 10vh;
+  padding-top: 10%;
 }
 
 .menu-btns {
@@ -54,7 +55,7 @@ img:active {
 .main {
   width: 60%;
   background-image: url("../assets/images/background2.png");
-  padding-top: 20vh;
+  padding-top: 10%;
 }
 
 button {

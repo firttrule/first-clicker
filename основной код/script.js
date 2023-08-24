@@ -62,6 +62,7 @@ function reset() {
   level = 1;
   updateUserLevel();
   skin = "skin1";
+  changeSkin(score);
 
   localStorage.removeItem("score");
   localStorage.removeItem("level");
