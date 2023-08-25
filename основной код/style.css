@@ -42,13 +42,14 @@ img:active {
 .menu {
   width: 40%;
   background-image: url("../assets/images/background1.png");
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .menu-btns {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 3%;
 }
 
 .main {
@@ -59,7 +60,7 @@ img:active {
 
 button {
   width: 45%;
-  height: 4vw;
+  height: 3vw;
   border-radius: 0.5vw;
   font-size: 1.5vw;
   cursor: pointer;

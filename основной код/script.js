@@ -63,10 +63,12 @@ function reset() {
   updateUserLevel();
   skin = "skin1";
   changeSkin(score);
+  autoScore = 0;
 
   localStorage.removeItem("score");
   localStorage.removeItem("level");
   localStorage.removeItem("skin");
+  localStorage.removeItem("autoScore");
 }
 
 function updateScore() {
@@ -75,4 +77,27 @@ function updateScore() {
 
 function updateUserLevel() {
   userLevel.innerHTML = `Ваш уровень: ${level}`;
+}
+
+// автоклик
+function autoClick() {
+  setTimeout(() => {
+    score += autoScore;
+    updateScore();
+    changeSkin(score);
+    localStorage.setItem("score", score);
+    autoClick();
+  }, 1000);
+}
+
+function buyAutoClick(num) {
+  if (score < 1000 * num) {
+    alert("Вам не хватает монет для улучшения, кликайте больше");
+  } else {
+    score -= 1000 * num;
+    autoScore += num;
+    localStorage.setItem("score", score);
+    localStorage.setItem("autoScore", autoScore);
+    autoClick();
+  }
 }
