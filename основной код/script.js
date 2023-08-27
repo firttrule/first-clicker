@@ -1,5 +1,6 @@
 let userScore = document.querySelector("#score");
 let userLevel = document.querySelector("#level");
+let userAutoScore = document.querySelector("#autoScore");
 let capybara = document.querySelector("#capybara");
 let score = 0;
 let level = 1;
@@ -23,7 +24,7 @@ if (localStorage.getItem("skin")) {
 
 function clickHandler() {
   score += level;
-  updateScore();
+  updateUserScore();
   changeSkin(score);
   localStorage.setItem("score", score);
 }
@@ -58,7 +59,7 @@ function changeSkin(s) {
 
 function reset() {
   score = 0;
-  updateScore();
+  updateUserScore();
   level = 1;
   updateUserLevel();
   skin = "skin1";
@@ -71,7 +72,7 @@ function reset() {
   localStorage.removeItem("autoScore");
 }
 
-function updateScore() {
+function updateUserScore() {
   userScore.innerHTML = `${score}$`;
 }
 
@@ -79,11 +80,15 @@ function updateUserLevel() {
   userLevel.innerHTML = `Ваш уровень: ${level}`;
 }
 
+function updateUserAutoScore() {
+  userAutoScore.innerHTML = `Автоклик: ${autoScore}$`;
+}
+
 // автоклик
 function autoClick() {
   setTimeout(() => {
     score += autoScore;
-    updateScore();
+    updateUserScore();
     changeSkin(score);
     localStorage.setItem("score", score);
     autoClick();
@@ -95,7 +100,9 @@ function buyAutoClick(num) {
     alert("Вам не хватает монет для улучшения, кликайте больше");
   } else {
     score -= 1000 * num;
+    updateUserScore();
     autoScore += num;
+    updateUserAutoScore();
     localStorage.setItem("score", score);
     localStorage.setItem("autoScore", autoScore);
     autoClick();
